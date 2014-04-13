@@ -15,10 +15,8 @@ function SwapCase(str) {
 
 
 function SwapCase(str) { 
-  var swap = str.replace(/[a-z]/ig,function(c){
-    if(c == c.toUpperCase()) var next = c.toLowerCase();
-    if(c == c.toLowerCase()) var next1 = c.toUpperCase();
-    return c == c.toLowerCase() ? next1 : next
+  return str.replace(/[a-z]/ig,function(c){
+    if(c == c.toUpperCase()) return c.toLowerCase();
+    return c.toUpperCase();
   });
-  return swap;
 }
