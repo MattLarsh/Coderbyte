@@ -20,3 +20,20 @@ function LetterCountI(str) {
      return "-1";
       }
 }
+
+/////////// regEx answer /////////////////
+function LetterCountI(str) { 
+  var words = str.split(' ');
+  var maxLetCount = 0;
+  for(var i=0;i<words.length;i++){
+    var multipleLets = words[i].match(/([a-z])(?=.*\1)/ig);
+    if(multipleLets != null){
+      if(multipleLets.length > maxLetCount){
+        maxLetCount = multipleLets.length;
+        var maxWord = words[i];
+      }
+    }
+  }
+  if(maxLetCount === 0) return -1;
+  return maxWord;
+}
